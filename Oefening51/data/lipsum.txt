@@ -1,0 +1,4 @@
+Frontend Webdevelopment
+Backend Webdevelopment
+Development for Windows 10
+Development for Android
