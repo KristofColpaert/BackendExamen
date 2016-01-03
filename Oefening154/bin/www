@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+//Module dependencies
+var http = require('http');
+var socketio = require('socket.io');
+
+//Own dependencies
+var app = require('../app');
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = process.env.PORT || '3000';
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app).listen(port);
+console.log('Server is listening to port ' + port);
+
+/**
+ * Plug Socket.io.
+ */
+
+var io = socketio(server);
+var socketHandler = require('../modules/socketHandler.js')(io);

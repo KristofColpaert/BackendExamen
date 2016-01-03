@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+    h1=title
+
+    p More information about #{user.username}
+
+    ul
+        li Firstname: #{user.firstname}
+        li Lastname: #{user.lastname}
+        li Email: #{user.email}
+        li Profession: #{user.profession}
+        li Gender: #{user.gender}
+
+    a(href="/users/") Back

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}, watch our list of users:
+
+    ul
+        li
+            a(href="/users") List
+        li
+            a(href="/users/new") New

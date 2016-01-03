@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+    h1=title
+
+    form#form(action="/users/new" method="POST" enctype="multipart/form-data")
+        p
+            label(for="userName") Username
+            br
+            input(name="userName" id="userName" type="text" placeholder="Username")
+        p
+            label(for="firstName") Firstname
+            br
+            input(name="firstName" id="firstName" type="text" placeholder="Firstname")
+
+        p
+            label(for="lastName") Lastname
+            br
+            input(name="lastName" id="lastName" type="text" placeholder="Lastname")
+
+        p
+            label(for="profession") Profession
+            br
+            input(name="profession" id="profession" type="text" placeholder="Profession")
+
+        p
+            input(id="submit" type="submit" placeholder="submit")

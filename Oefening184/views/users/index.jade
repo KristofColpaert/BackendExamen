@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+    h1=title
+
+    table#table
+        tr
+            th Username
+            th Name
+            th Delete
+            th Edit
+
+        each user in users
+            tr
+                td #{user.username}
+                td
+                    a(href="/users/#{user.username}") #{user.firstname} #{user.lastname}
+                td
+                    form#formDelete(method="POST" action="/users/edit")
+                        input(type="hidden" value="#{user.username}" name="username")
+                        input(type="hidden" value="DELETE" name="method")
+                        input(type="submit" value="Delete")
+                td
+                    form#formEdit(method="POST" action="/users/edit")
+                        input(type="hidden" value="#{user.username}" name="username")
+                        input(type="hidden" value="EDIT_QUEST" name="method")
+                        input(type="submit" value="Edit")
+
+    a(href="/users/new") New user

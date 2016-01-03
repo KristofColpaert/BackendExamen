@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+    h1=title
+
+    p #{user.firstName} #{user.lastName}
+    p Profession:
+    ul
+        li #{user.profession}
+
+    a(href="/users/") Back
+
+    form#form(method="POST" action="/users/delete")
+        input(name="userName" type="hidden" value="#{user.userName}")
+        input(type="submit" value="Delete")

@@ -1,0 +1,13 @@
+{
+  "Johan" : {
+    "firstName" : "Johan",
+    "lastName" : "Van Nieuwenhuysen",
+    "profession" : "docent"
+  },
+
+  "Lambik" : {
+    "firstName" : "Lambik",
+    "lastName" : "Vandersteen",
+    "profession" : "docent"
+  }
+}

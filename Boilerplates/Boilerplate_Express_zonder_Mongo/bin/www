@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+var bodyparser = require('body-parser');
+var app = require('../app.js');
+
+//General setup
+app.use(bodyparser.urlencoded({ extended : true }));
+app.use(bodyparser.json({ type : 'application/json' }));
+
+//Init port
+var port = process.env.PORT || 3000;
+
+//Start server
+var server = app.listen(port);
+console.log('Server is listening to port ' + port);

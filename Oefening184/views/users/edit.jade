@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+    h1=title
+
+    - if(typeof errors !== 'undefined')
+        p Validation failed due to folowing errors:
+        ul
+            each error in errors
+                li #{error.message}
+
+    form#form(method="POST" action="/users/edit")
+        input(type="hidden" name="method" value="EDIT_POST")
+        input(type="hidden" name="_id" value="#{user._id}")
+
+        p
+            input(id="username" name="username" type="text" placeholder="username" value="#{user.username}")
+
+        p
+            input(id="firstname" name="firstname" type="text" placeholder="firstname" value="#{user.firstname}")
+
+        p
+            input(id="lastname" name="lastname" type="text" placeholder="lastname" value="#{user.lastname}")
+
+        p
+            input(id="email" name="email" type="text" placeholder="email" value="#{user.email}")
+
+        p
+            input(id="profession" name="profession" type="text" placeholder="profession" value="#{user.profession}")
+
+        p
+            input(id="gender" name="gender" type="text" placeholder="gender" value="#{user.gender}")
+
+        p
+            input(id="submit" type="submit" value="Submit")
+
+    a(href="/users") Back
